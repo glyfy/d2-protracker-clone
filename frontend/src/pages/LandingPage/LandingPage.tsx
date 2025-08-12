@@ -1,13 +1,32 @@
-import TopBar from "@/pages/LandingPage/components/TopBar"
+import TopBar from '@/pages/LandingPage/components/TopBar';
+import { Tabs, Tab } from '@mui/material';
+import { useState } from 'react';
 function LandingPage() {
+  const [value, setValue] = useState(0);
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
   return (
     <>
       <TopBar />
-      <div className="landing-page">
-        <div>Top Header</div>
-        <h1>Welcome to the Landing Page</h1>
-        <p>This is the main entry point of our application.</p>
-      </div>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        slotProps={{
+          indicator: {
+            sx: {
+              display: 'none',
+            },
+          },
+        }}
+      >
+        <Tab label="All" />
+        <Tab label="Carry" />
+        <Tab label="Mid" />
+        <Tab label="Off" />
+        <Tab label="Pos 4" />
+        <Tab label="Pos 5" />
+      </Tabs>
     </>
   );
 }
