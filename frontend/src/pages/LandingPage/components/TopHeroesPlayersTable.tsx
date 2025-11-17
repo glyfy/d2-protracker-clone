@@ -1,9 +1,12 @@
+import { Table, TableContainer } from '@mui/material';
+
 function TopHeroesPlayersTable() {
   return (
-    <div>
-      <h2>Top Heroes Players</h2>
-      {/* Table implementation goes here */}
-    </div>
+    <TableContainer component={Paper}>
+      <Table>
+        <TableRow></TableRow>
+      </Table>
+    </TableContainer>
   );
 }
 
