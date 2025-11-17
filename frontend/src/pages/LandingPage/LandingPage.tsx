@@ -1,5 +1,6 @@
 import TopBar from '@/pages/LandingPage/components/TopBar';
 import { Tabs, Tab } from '@mui/material';
+import TopHeroesPlayersTable from '@/pages/LandingPage/components/TopHeroesPlayersTable';
 import { useState } from 'react';
 function LandingPage() {
   const [value, setValue] = useState(0);
@@ -9,24 +10,7 @@ function LandingPage() {
   return (
     <>
       <TopBar />
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        slotProps={{
-          indicator: {
-            sx: {
-              display: 'none',
-            },
-          },
-        }}
-      >
-        <Tab label="All" />
-        <Tab label="Carry" />
-        <Tab label="Mid" />
-        <Tab label="Off" />
-        <Tab label="Pos 4" />
-        <Tab label="Pos 5" />
-      </Tabs>
+      <TopHeroesPlayersTable />
     </>
   );
 }
